@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "1de98c79-8f9f-4817-a24a-c063ec3ac8aa",
+		"name": "Hyper-Recent-Postman-APIs",
+		"description": "Documentation for the hyper recent API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38757327"
+	},
+	"item": [
+		{
+			"name": "List All Topics",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{PORT}}/api/topics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"topics"
+					]
+				},
+				"description": "This API lists all topics available on the backend server"
+			},
+			"response": [
+				{
+					"name": "POST Topics",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Oct 2024 03:23:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"topics\": [\n        {\n            \"topicId\": 1,\n            \"name\": \"Alzheimer's Disease\"\n        },\n        {\n            \"topicId\": 2,\n            \"name\": \"Biology\"\n        },\n        {\n            \"topicId\": 3,\n            \"name\": \"Pharmacology\"\n        },\n        {\n            \"topicId\": 4,\n            \"name\": \"Tissue Engineering\"\n        },\n        {\n            \"topicId\": 5,\n            \"name\": \"Neurology\"\n        },\n        {\n            \"topicId\": 6,\n            \"name\": \"Infectious Disease\"\n        },\n        {\n            \"topicId\": 7,\n            \"name\": \"Chemistry\"\n        },\n        {\n            \"topicId\": 8,\n            \"name\": \"Cancer\"\n        },\n        {\n            \"topicId\": 9,\n            \"name\": \"Immunology\"\n        },\n        {\n            \"topicId\": 10,\n            \"name\": \"Cell Biology\"\n        },\n        {\n            \"topicId\": 11,\n            \"name\": \"Computer Science\"\n        }\n    ],\n    \"now\": 1730172195356\n}"
+				}
+			]
+		},
+		{
+			"name": "List Authors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"authors"
+					]
+				},
+				"description": "This API lists all topics available on the backend server"
+			},
+			"response": [
+				{
+					"name": "POST Authors",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Oct 2024 03:26:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"topics\": [\n        {\n            \"authorId\": 1,\n            \"firstName\": \"Bob\",\n            \"lastName\": \"Giant\"\n        },\n        {\n            \"authorId\": 2,\n            \"firstName\": \"Alice\",\n            \"lastName\": \"Zhang\"\n        },\n        {\n            \"authorId\": 3,\n            \"firstName\": \"Robert\",\n            \"lastName\": \"Williams\"\n        },\n        {\n            \"authorId\": 4,\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\"\n        },\n        {\n            \"authorId\": 5,\n            \"firstName\": \"Barrack\",\n            \"lastName\": \"Williams\"\n        }\n    ],\n    \"now\": 1730172413656\n}"
+				}
+			]
+		},
+		{
+			"name": "Posts by Topic ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/topics/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"topics",
+						"1"
+					]
+				},
+				"description": "This API lists all topics available on the backend server"
+			},
+			"response": [
+				{
+					"name": "Posts by Topic ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/topics/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Oct 2024 03:28:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"posts\": [\n        {\n            \"title\": \"Plants with purple abaxial leaves: A repository of metrics from stomata distribution.\",\n            \"slug\": \"slug-default\",\n            \"publisher\": \"biorxiv\",\n            \"authors\": [\n                \"Bob Giant\",\n                \"Alice Zhang\"\n            ],\n            \"date\": \"Mon Oct 28 2024\",\n            \"summary\": \"Plants with purple abaxial leaf surfaces are very common in nature but the ecophysiological aspects of this phenotype are not well known. We observed here that the purple color of the abaxial tegument in living leaves make stomata completely visible. Based in it we measured the relations between stomatic density, celular area and distance between stomata pairs and observed a general log-normal trend line between density x celular area and density x interstomatic distance. These data shows that measures of stomatic distances at purple abaxial leaves are able to be a sensor to environmental changes of living purple plants. In future ecophysiological inferences will be established from the information brought by the measurements of the distance between stomata in purple plants.\",\n            \"publisherIconUrl\": \"/images/publisher-icon.png\",\n            \"categories\": [\n                \"Alzheimer's Disease\"\n            ]\n        },\n        {\n            \"title\": \"The Cul3 ubiquitin ligase engages Insomniac as an adaptor to impact sleep and synaptic homeostasis\",\n            \"slug\": \"slug-default\",\n            \"publisher\": \"biorxiv\",\n            \"authors\": [\n                \"Bob Giant\",\n                \"Alice Zhang\"\n            ],\n            \"date\": \"Mon Oct 28 2024\",\n            \"summary\": \"Mutations of the Cullin-3 (Cul3) E3 ubiquitin ligase are associated with autism and schizophrenia, neurological disorders characterized by sleep disturbances and altered synaptic function. Cul3 engages dozens of adaptor proteins to recruit hundreds of substrates for ubiquitination, but the adaptors that impact sleep and synapses remain ill-defined. Here we implicate Insomniac (Inc), a conserved protein required for normal sleep and synaptic homeostasis in Drosophila, as a Cul3 adaptor. Inc binds Cul3 in vivo, and mutations within the N-terminal BTB domain of Inc that weaken Inc-Cul3 associations impair Inc activity, indicating that Inc function requires binding to the Cul3 complex. Deletion of the conserved C-terminus of Inc does not alter Cul3 binding but abolishes Inc activity in the context of sleep and synaptic homeostasis, suggesting that the C-terminal domain of Inc is a substrate recruitment domain. Mutation of a conserved, disease-associated arginine in the Inc C-terminus also abolishes Inc function, suggesting that this residue is vital for recruiting Inc targets. Inc levels are negatively regulated by Cul3 in neurons, consistent with Inc degradation by autocatalytic ubiquitination, a hallmark of Cullin adaptors. These findings link Inc and Cul3 in vivo and indicate that Cul3-Inc complexes are essential for normal sleep and synaptic function. Furthermore, these results indicate that dysregulation of conserved substrates of Cul3-Inc complexes may contribute to altered sleep and synaptic function in autism and schizophrenia associated with Cul3 mutations.\",\n            \"publisherIconUrl\": \"/images/publisher-icon.png\",\n            \"categories\": [\n                \"Alzheimer's Disease\",\n                \"Biology\"\n            ]\n        }\n    ],\n    \"now\": 1730172506452\n}"
+				}
+			]
+		},
+		{
+			"name": "Article search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/articles/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"articles",
+						"search"
+					]
+				},
+				"description": "This API lists all topics available on the backend server"
+			},
+			"response": [
+				{
+					"name": "article search no params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/articles/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 01 Nov 2024 01:41:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\"posts\":[{\"articleId\":6,\"title\":\"Profiling the endothelial translatome in vivo using 'AngioTag' zebrafish\",\"institution\":\"National Institutes of Health\",\"date\":\"2024-10-29T01:55:19.100Z\",\"link\":\"10.1101/815696\",\"abstract\":\"Vascular endothelial cells in vivo are exquisitely regulated by their local environment, which is disrupted or absent when using methods such as FACS sorting of cells isolated from animals or in vitro cell culture. Here, we profile the gene expression patterns of undisturbed endothelial cells in living animals using a novel \\\"AngioTag\\\" zebrafish transgenic line that permits isolation of actively translating mRNAs from endothelial cells in their native environment. This transgenic line uses the endothelial cell-specific kdrl promoter to drive expression of an epitope tagged Rpl10a 60S ribosomal subunit protein, allowing for Translating Ribosome Affinity Purification (TRAP) of actively translating endothelial cell mRNAs. By performing TRAP-RNAseq on AngioTag animals, we demonstrate strong enrichment of endothelial specific genes and uncover novel endothelial genes and unique endothelial gene expression signatures for different adult organs. Finally, we generated a versatile \\\"UAS:RiboTag\\\" transgenic line to allow a wider array of different zebrafish cell and tissue types to be examined using TRAP-RNAseq methods. These new tools offer an unparalleled resource to study the molecular identity of cells in their normal in vivo context.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Miller, M. F.; Greenspan, L. J.; Gildea, D. E.; Monzo, K.; Margolin, G.; Pham, V. N.; Ameyaw, K.; Price, L.; Aloi, N.; Stratman, A. N.; Davis, A. E.; Cisneros, I.; Mertus, C.; Dale, R. K.; Baxevanis, A. D.; Weinstein, B. M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":4,\"title\":\"Conformational Transition Pathways in Major Facilitator Superfamily Transporters\",\"institution\":\"University of Arkansas\",\"date\":\"2024-10-29T01:55:19.099Z\",\"link\":\"10.1101/708289\",\"abstract\":\"AbstractThe major facilitator superfamily (MFS) of transporters contains three classes of membrane transporters: symporters, uniporters, and antiporters. Despite utilizing a variety of transport methods, MFS transporters are believed to undergo similar con-formational changes within their distinct transport cycles. Although the similarities regarding conformational changes between the classes of MFS transporters are note-worthy, the differences are also valuable because they may explain the distinct functions of the classes within the MFS. Here, we have performed a variety of equilibrium and non-equilibrium all-atom molecular dynamics (MD) simulations of the bacterial proton-coupled oligopeptide transporter (GkPOT) and the human glucose transporter 1 (GluT1). To compare the similarities and differences of the conformational dynamics found within the three different classes of transporters we have also referenced previous simulations involving the glycerol-3-phosphate (GlpT) transporter. All of the proteins discussed here were simulated in the apo state in explicit membrane environments. Our results suggest a very similar conformational transition for all transporter types involving interbundle salt-bridge formation/disruption coupled with the orientation changes of transmembrane (TM) helices, specifically H1/H7 and H5/H11, resulting in an alternation in the accessibility of water at the cyto- and periplasmic gates.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Ogden, D.; Immadisetty, K.; Sauve, S.; Moradi, M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":5,\"title\":\"Oscillatory multi-timescale mechanisms underlying multisensory sequence prediction\",\"institution\":\"University Medical Center Hamburg-Eppendorf\",\"date\":\"2024-10-29T01:55:19.099Z\",\"link\":\"10.1101/778969\",\"abstract\":\"Neural oscillations have been proposed to be involved in predictive processing, however less addressed in the multisensory context. In the present study, we recorded cortical activity using magnetoencephalography during an audiovisual serial prediction task in which participants had to acquire stimulus sequences and to monitor whether subsequent probe items complied with the sequence. In a given trial, either visual or auditory features of the bimodal stimuli were task-relevant. Task-related changes of power and coupling of neural oscillations were analyzed using a data-driven clustering approach. We observed prediction-related theta-band coupling in a network involving the cingulate, premotor, prefrontal, and superior temporal regions. The behavioral performance of participants varied as a function of the phase delay of the coupling between different regions in this network. Two additional clusters were detected in which beta power was stronger if the previous or the following stimuli were the same as the current one in the sequence. These clusters interacted with the theta-band prediction network through cross-frequency coupling. Our results offer novel insights into the multi-timescale neural dynamics underlying multisensory predictions, suggesting that oscillations in multiple frequency ranges, as well as coupling within and across frequencies, may be critical for multisensory sequence processing.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Wang, P.; Maÿe, A.; Daume, J.; Xue, G.; Engel, A. K.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":3,\"title\":\"The Cul3 ubiquitin ligase engages Insomniac as an adaptor to impact sleep and synaptic homeostasis\",\"institution\":\"New York University School of Medicine\",\"date\":\"2024-10-29T01:55:19.098Z\",\"link\":\"10.1101/689471\",\"abstract\":\"Mutations of the Cullin-3 (Cul3) E3 ubiquitin ligase are associated with autism and schizophrenia, neurological disorders characterized by sleep disturbances and altered synaptic function. Cul3 engages dozens of adaptor proteins to recruit hundreds of substrates for ubiquitination, but the adaptors that impact sleep and synapses remain ill-defined. Here we implicate Insomniac (Inc), a conserved protein required for normal sleep and synaptic homeostasis in Drosophila, as a Cul3 adaptor. Inc binds Cul3 in vivo, and mutations within the N-terminal BTB domain of Inc that weaken Inc-Cul3 associations impair Inc activity, indicating that Inc function requires binding to the Cul3 complex. Deletion of the conserved C-terminus of Inc does not alter Cul3 binding but abolishes Inc activity in the context of sleep and synaptic homeostasis, suggesting that the C-terminal domain of Inc is a substrate recruitment domain. Mutation of a conserved, disease-associated arginine in the Inc C-terminus also abolishes Inc function, suggesting that this residue is vital for recruiting Inc targets. Inc levels are negatively regulated by Cul3 in neurons, consistent with Inc degradation by autocatalytic ubiquitination, a hallmark of Cullin adaptors. These findings link Inc and Cul3 in vivo and indicate that Cul3-Inc complexes are essential for normal sleep and synaptic function. Furthermore, these results indicate that dysregulation of conserved substrates of Cul3-Inc complexes may contribute to altered sleep and synaptic function in autism and schizophrenia associated with Cul3 mutations.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Li, Q.; Lim, K. Y.; Altawell, R.; Verderose, F.; Dong, C.; Martinez, J.; Li, X.; Dickman, D.; Stavropoulos, N.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":2,\"title\":\"A miRNA screen identifies a transcriptional program controlling the fate of adult stem cell\",\"institution\":\"Univ. of Bordeaux\",\"date\":\"2024-10-29T01:55:19.096Z\",\"link\":\"10.1101/314658\",\"abstract\":\"The 3D cultures provide more insight into cell-to-cell and cell-to-matrix interactions, better mimicking the environment where stem cells reside compared to traditional 2D cultures. Although the precise molecular pathways involved in the regulation of stem and progenitor cell fate remain unknown, it is widely accepted that transcription factors play a crucial role as intrinsic regulators in these fate decisions. In this study, we carried out a microRNA screen to track the behaviour of adult stem/progenitor cells derived from human mammary epithelial cells grown in 3D cultures. We identified miR-106a-3p, which enriches the adult stem cell-like lineage and promotes the expansion of 3D cultures. Transcriptomic analysis showed that this miRNA regulates transcription factors such as REST, CBFB, NF-YA, and GATA3, thereby enhancing the maintenance of adult stem/progenitor cells in human epithelial cells. These data reveal a clear transcriptional program that governs the maintenance of adult stem/progenitor cells and controls their fate.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Robert, J.; Vlachavas, E.-I.; Lemaitre, G.; Chatziioannou, A.; Puceat, M.; Delom, F.; Fessart, D.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":1,\"title\":\"Plants with purple abaxial leaves: A repository of metrics from stomata distribution.\",\"institution\":\"Universidade de Sao Paulo (USP-Sao Carlos)\",\"date\":\"2024-10-29T01:55:19.092Z\",\"link\":\"10.1101/294553\",\"abstract\":\"Plants with purple abaxial leaf surfaces are very common in nature but the ecophysiological aspects of this phenotype are not well known. We observed here that the purple color of the abaxial tegument in living leaves make stomata completely visible. Based in it we measured the relations between stomatic density, celular area and distance between stomata pairs and observed a general log-normal trend line between density x celular area and density x interstomatic distance. These data shows that measures of stomatic distances at purple abaxial leaves are able to be a sensor to environmental changes of living purple plants. In future ecophysiological inferences will be established from the information brought by the measurements of the distance between stomata in purple plants.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Almeida Filho, H. A.; Martinez Bruno, O.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"}],\"now\":1730425280570}"
+				},
+				{
+					"name": "search using query profiling",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/articles/search?q=profiling",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "profiling"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 01 Nov 2024 01:44:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\"posts\":[{\"articleId\":6,\"title\":\"Profiling the endothelial translatome in vivo using 'AngioTag' zebrafish\",\"institution\":\"National Institutes of Health\",\"date\":\"2024-10-29T01:55:19.100Z\",\"link\":\"10.1101/815696\",\"abstract\":\"Vascular endothelial cells in vivo are exquisitely regulated by their local environment, which is disrupted or absent when using methods such as FACS sorting of cells isolated from animals or in vitro cell culture. Here, we profile the gene expression patterns of undisturbed endothelial cells in living animals using a novel \\\"AngioTag\\\" zebrafish transgenic line that permits isolation of actively translating mRNAs from endothelial cells in their native environment. This transgenic line uses the endothelial cell-specific kdrl promoter to drive expression of an epitope tagged Rpl10a 60S ribosomal subunit protein, allowing for Translating Ribosome Affinity Purification (TRAP) of actively translating endothelial cell mRNAs. By performing TRAP-RNAseq on AngioTag animals, we demonstrate strong enrichment of endothelial specific genes and uncover novel endothelial genes and unique endothelial gene expression signatures for different adult organs. Finally, we generated a versatile \\\"UAS:RiboTag\\\" transgenic line to allow a wider array of different zebrafish cell and tissue types to be examined using TRAP-RNAseq methods. These new tools offer an unparalleled resource to study the molecular identity of cells in their normal in vivo context.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Miller, M. F.; Greenspan, L. J.; Gildea, D. E.; Monzo, K.; Margolin, G.; Pham, V. N.; Ameyaw, K.; Price, L.; Aloi, N.; Stratman, A. N.; Davis, A. E.; Cisneros, I.; Mertus, C.; Dale, R. K.; Baxevanis, A. D.; Weinstein, B. M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"}],\"now\":1730425492618}"
+				}
+			]
+		},
+		{
+			"name": "Article search no params",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{PORT}}/api/articles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"articles",
+						""
+					]
+				},
+				"description": "This API lists all topics available on the backend server"
+			},
+			"response": [
+				{
+					"name": "article search no params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/articles/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 01 Nov 2024 01:41:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\"posts\":[{\"articleId\":6,\"title\":\"Profiling the endothelial translatome in vivo using 'AngioTag' zebrafish\",\"institution\":\"National Institutes of Health\",\"date\":\"2024-10-29T01:55:19.100Z\",\"link\":\"10.1101/815696\",\"abstract\":\"Vascular endothelial cells in vivo are exquisitely regulated by their local environment, which is disrupted or absent when using methods such as FACS sorting of cells isolated from animals or in vitro cell culture. Here, we profile the gene expression patterns of undisturbed endothelial cells in living animals using a novel \\\"AngioTag\\\" zebrafish transgenic line that permits isolation of actively translating mRNAs from endothelial cells in their native environment. This transgenic line uses the endothelial cell-specific kdrl promoter to drive expression of an epitope tagged Rpl10a 60S ribosomal subunit protein, allowing for Translating Ribosome Affinity Purification (TRAP) of actively translating endothelial cell mRNAs. By performing TRAP-RNAseq on AngioTag animals, we demonstrate strong enrichment of endothelial specific genes and uncover novel endothelial genes and unique endothelial gene expression signatures for different adult organs. Finally, we generated a versatile \\\"UAS:RiboTag\\\" transgenic line to allow a wider array of different zebrafish cell and tissue types to be examined using TRAP-RNAseq methods. These new tools offer an unparalleled resource to study the molecular identity of cells in their normal in vivo context.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Miller, M. F.; Greenspan, L. J.; Gildea, D. E.; Monzo, K.; Margolin, G.; Pham, V. N.; Ameyaw, K.; Price, L.; Aloi, N.; Stratman, A. N.; Davis, A. E.; Cisneros, I.; Mertus, C.; Dale, R. K.; Baxevanis, A. D.; Weinstein, B. M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":4,\"title\":\"Conformational Transition Pathways in Major Facilitator Superfamily Transporters\",\"institution\":\"University of Arkansas\",\"date\":\"2024-10-29T01:55:19.099Z\",\"link\":\"10.1101/708289\",\"abstract\":\"AbstractThe major facilitator superfamily (MFS) of transporters contains three classes of membrane transporters: symporters, uniporters, and antiporters. Despite utilizing a variety of transport methods, MFS transporters are believed to undergo similar con-formational changes within their distinct transport cycles. Although the similarities regarding conformational changes between the classes of MFS transporters are note-worthy, the differences are also valuable because they may explain the distinct functions of the classes within the MFS. Here, we have performed a variety of equilibrium and non-equilibrium all-atom molecular dynamics (MD) simulations of the bacterial proton-coupled oligopeptide transporter (GkPOT) and the human glucose transporter 1 (GluT1). To compare the similarities and differences of the conformational dynamics found within the three different classes of transporters we have also referenced previous simulations involving the glycerol-3-phosphate (GlpT) transporter. All of the proteins discussed here were simulated in the apo state in explicit membrane environments. Our results suggest a very similar conformational transition for all transporter types involving interbundle salt-bridge formation/disruption coupled with the orientation changes of transmembrane (TM) helices, specifically H1/H7 and H5/H11, resulting in an alternation in the accessibility of water at the cyto- and periplasmic gates.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Ogden, D.; Immadisetty, K.; Sauve, S.; Moradi, M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":5,\"title\":\"Oscillatory multi-timescale mechanisms underlying multisensory sequence prediction\",\"institution\":\"University Medical Center Hamburg-Eppendorf\",\"date\":\"2024-10-29T01:55:19.099Z\",\"link\":\"10.1101/778969\",\"abstract\":\"Neural oscillations have been proposed to be involved in predictive processing, however less addressed in the multisensory context. In the present study, we recorded cortical activity using magnetoencephalography during an audiovisual serial prediction task in which participants had to acquire stimulus sequences and to monitor whether subsequent probe items complied with the sequence. In a given trial, either visual or auditory features of the bimodal stimuli were task-relevant. Task-related changes of power and coupling of neural oscillations were analyzed using a data-driven clustering approach. We observed prediction-related theta-band coupling in a network involving the cingulate, premotor, prefrontal, and superior temporal regions. The behavioral performance of participants varied as a function of the phase delay of the coupling between different regions in this network. Two additional clusters were detected in which beta power was stronger if the previous or the following stimuli were the same as the current one in the sequence. These clusters interacted with the theta-band prediction network through cross-frequency coupling. Our results offer novel insights into the multi-timescale neural dynamics underlying multisensory predictions, suggesting that oscillations in multiple frequency ranges, as well as coupling within and across frequencies, may be critical for multisensory sequence processing.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Wang, P.; Maÿe, A.; Daume, J.; Xue, G.; Engel, A. K.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":3,\"title\":\"The Cul3 ubiquitin ligase engages Insomniac as an adaptor to impact sleep and synaptic homeostasis\",\"institution\":\"New York University School of Medicine\",\"date\":\"2024-10-29T01:55:19.098Z\",\"link\":\"10.1101/689471\",\"abstract\":\"Mutations of the Cullin-3 (Cul3) E3 ubiquitin ligase are associated with autism and schizophrenia, neurological disorders characterized by sleep disturbances and altered synaptic function. Cul3 engages dozens of adaptor proteins to recruit hundreds of substrates for ubiquitination, but the adaptors that impact sleep and synapses remain ill-defined. Here we implicate Insomniac (Inc), a conserved protein required for normal sleep and synaptic homeostasis in Drosophila, as a Cul3 adaptor. Inc binds Cul3 in vivo, and mutations within the N-terminal BTB domain of Inc that weaken Inc-Cul3 associations impair Inc activity, indicating that Inc function requires binding to the Cul3 complex. Deletion of the conserved C-terminus of Inc does not alter Cul3 binding but abolishes Inc activity in the context of sleep and synaptic homeostasis, suggesting that the C-terminal domain of Inc is a substrate recruitment domain. Mutation of a conserved, disease-associated arginine in the Inc C-terminus also abolishes Inc function, suggesting that this residue is vital for recruiting Inc targets. Inc levels are negatively regulated by Cul3 in neurons, consistent with Inc degradation by autocatalytic ubiquitination, a hallmark of Cullin adaptors. These findings link Inc and Cul3 in vivo and indicate that Cul3-Inc complexes are essential for normal sleep and synaptic function. Furthermore, these results indicate that dysregulation of conserved substrates of Cul3-Inc complexes may contribute to altered sleep and synaptic function in autism and schizophrenia associated with Cul3 mutations.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Li, Q.; Lim, K. Y.; Altawell, R.; Verderose, F.; Dong, C.; Martinez, J.; Li, X.; Dickman, D.; Stavropoulos, N.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":2,\"title\":\"A miRNA screen identifies a transcriptional program controlling the fate of adult stem cell\",\"institution\":\"Univ. of Bordeaux\",\"date\":\"2024-10-29T01:55:19.096Z\",\"link\":\"10.1101/314658\",\"abstract\":\"The 3D cultures provide more insight into cell-to-cell and cell-to-matrix interactions, better mimicking the environment where stem cells reside compared to traditional 2D cultures. Although the precise molecular pathways involved in the regulation of stem and progenitor cell fate remain unknown, it is widely accepted that transcription factors play a crucial role as intrinsic regulators in these fate decisions. In this study, we carried out a microRNA screen to track the behaviour of adult stem/progenitor cells derived from human mammary epithelial cells grown in 3D cultures. We identified miR-106a-3p, which enriches the adult stem cell-like lineage and promotes the expansion of 3D cultures. Transcriptomic analysis showed that this miRNA regulates transcription factors such as REST, CBFB, NF-YA, and GATA3, thereby enhancing the maintenance of adult stem/progenitor cells in human epithelial cells. These data reveal a clear transcriptional program that governs the maintenance of adult stem/progenitor cells and controls their fate.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Robert, J.; Vlachavas, E.-I.; Lemaitre, G.; Chatziioannou, A.; Puceat, M.; Delom, F.; Fessart, D.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"},{\"articleId\":1,\"title\":\"Plants with purple abaxial leaves: A repository of metrics from stomata distribution.\",\"institution\":\"Universidade de Sao Paulo (USP-Sao Carlos)\",\"date\":\"2024-10-29T01:55:19.092Z\",\"link\":\"10.1101/294553\",\"abstract\":\"Plants with purple abaxial leaf surfaces are very common in nature but the ecophysiological aspects of this phenotype are not well known. We observed here that the purple color of the abaxial tegument in living leaves make stomata completely visible. Based in it we measured the relations between stomatic density, celular area and distance between stomata pairs and observed a general log-normal trend line between density x celular area and density x interstomatic distance. These data shows that measures of stomatic distances at purple abaxial leaves are able to be a sensor to environmental changes of living purple plants. In future ecophysiological inferences will be established from the information brought by the measurements of the distance between stomata in purple plants.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Almeida Filho, H. A.; Martinez Bruno, O.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"}],\"now\":1730425280570}"
+				},
+				{
+					"name": "search using query profiling",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/articles/search?q=profiling",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"articles",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "profiling"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "vary",
+							"value": "RSC, Next-Router-State-Tree, Next-Router-Prefetch"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 01 Nov 2024 01:44:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\"posts\":[{\"articleId\":6,\"title\":\"Profiling the endothelial translatome in vivo using 'AngioTag' zebrafish\",\"institution\":\"National Institutes of Health\",\"date\":\"2024-10-29T01:55:19.100Z\",\"link\":\"10.1101/815696\",\"abstract\":\"Vascular endothelial cells in vivo are exquisitely regulated by their local environment, which is disrupted or absent when using methods such as FACS sorting of cells isolated from animals or in vitro cell culture. Here, we profile the gene expression patterns of undisturbed endothelial cells in living animals using a novel \\\"AngioTag\\\" zebrafish transgenic line that permits isolation of actively translating mRNAs from endothelial cells in their native environment. This transgenic line uses the endothelial cell-specific kdrl promoter to drive expression of an epitope tagged Rpl10a 60S ribosomal subunit protein, allowing for Translating Ribosome Affinity Purification (TRAP) of actively translating endothelial cell mRNAs. By performing TRAP-RNAseq on AngioTag animals, we demonstrate strong enrichment of endothelial specific genes and uncover novel endothelial genes and unique endothelial gene expression signatures for different adult organs. Finally, we generated a versatile \\\"UAS:RiboTag\\\" transgenic line to allow a wider array of different zebrafish cell and tissue types to be examined using TRAP-RNAseq methods. These new tools offer an unparalleled resource to study the molecular identity of cells in their normal in vivo context.\",\"isPreprint\":true,\"firstAuthorId\":1,\"lastAuthorId\":2,\"authorList\":\"Miller, M. F.; Greenspan, L. J.; Gildea, D. E.; Monzo, K.; Margolin, G.; Pham, V. N.; Ameyaw, K.; Price, L.; Aloi, N.; Stratman, A. N.; Davis, A. E.; Cisneros, I.; Mertus, C.; Dale, R. K.; Baxevanis, A. D.; Weinstein, B. M.\",\"slug\":\"slug-default\",\"server\":\"biorxiv\"}],\"now\":1730425492618}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT",
+			"value": "3001",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "plugins": ["react-camel-case", "simple-import-sort", "import"],
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "import/order": "off",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn",
+    "react-camel-case/react-camel-case": "error",
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}

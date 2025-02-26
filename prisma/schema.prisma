@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  articleId      Int            @id @default(autoincrement())
+  title          String
+  institution    String
+  date           DateTime
+  link           String         
+  abstract       String
+  isPreprint     Boolean        
+  firstAuthorId  Int
+  lastAuthorId   Int
+  authorList     String
+  slug           String
+  server         String
+  firstAuthor    Author         @relation("AuthorFirstNameRel", fields: [firstAuthorId], references: [authorId])
+  lastAuthor     Author         @relation("AuthorLastNameRel", fields: [lastAuthorId], references: [authorId])
+  articleTopics  ArticleTopic[]
+  version        Int
+  @@unique(name: "uniqueVersion", [version, link])
+}
+
+model Topic {
+  topicId       Int            @id @default(autoincrement())
+  name          String         @unique
+  articleTopic  ArticleTopic[]
+  parentTopics  SubTopic[]     @relation("ChildToParentRel")
+  childTopics   SubTopic[]     @relation("ParentToChildRel")
+}
+
+model ArticleTopic {
+  articleTopicId  Int     @id @default(autoincrement())
+  articleId       Int
+  topicId         Int
+  article         Article @relation(fields: [articleId], references: [articleId], onDelete: Cascade)
+  topic           Topic   @relation(fields: [topicId], references: [topicId], onDelete: Cascade)
+}
+
+model SubTopic {
+  subTopicId    Int   @id @default(autoincrement())
+  parentTopicId Int
+  childTopicId  Int
+  parentTopic   Topic @relation("ParentToChildRel", fields: [parentTopicId], references: [topicId], onDelete: Cascade)
+  childTopic    Topic @relation("ChildToParentRel", fields: [childTopicId], references: [topicId], onDelete: Cascade)
+}
+
+model Author {
+  authorId            Int         @id @default(autoincrement())
+  firstName           String      
+  lastName            String      
+  firstAuthorArticles Article[]   @relation("AuthorFirstNameRel")
+  lastAuthorArticles  Article[]   @relation("AuthorLastNameRel")
+  @@unique(name: "uniqueName", [firstName, lastName])  
+}

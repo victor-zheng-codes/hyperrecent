@@ -1,0 +1,7 @@
+Stakeholder(s)
+- Partners:
+  - Jeffrey Wong. Research Associate in the Bader lab. Our main point of contact for the project. Contact: jvwong@gmail.com.
+  - Gary Bader. Professor and Principal Investigator in charge of the project. Our secondary contact who we have not officially met with yet. Contact: gary.bader@utoronto.ca.
+- TAs: 
+  - Brian Ramprasad. TA in charge of our group. Contact: brian.ramprasad@gmail.com.
+  - Pritish Mishra. Lead TA. Contact: pritish.mishra@mail.utoronto.ca.

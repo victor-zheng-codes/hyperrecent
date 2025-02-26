@@ -1,0 +1,25 @@
+services:
+  # here if we are using the creds non localhost
+  db:
+    image: postgres:13  # Use PostgreSQL 13 image
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}  # Username from .env
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Password from .env
+      POSTGRES_DB: ${POSTGRES_DB}  # Database name from .env
+    ports:
+      - "5433:5432"  # Expose the PostgreSQL port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist PostgreSQL data
+
+  build:
+    build: 
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # Expose port 3000 for Next.js
+    environment:
+      DATABASE_URL: ${DATABASE_URL}   # Prisma database connection string
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

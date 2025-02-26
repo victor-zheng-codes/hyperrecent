@@ -1,0 +1,64 @@
+{
+  "name": "hyperrecent",
+  "description": "Hyper recent papers",
+  "version": "1.0.1",
+  "private": true,
+  "prisma": {
+    "seed": "tsx prisma/migrateDataScript.ts",
+    "schema": "./prisma/schema.prisma"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/generate-build-info.js && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/react-datepicker": "^6.2.0",
+    "autoprefixer": "^10.4.15",
+    "clsx": "^2.1.0",
+    "date-fns": "^3.6.0",
+    "next": "latest",
+    "nextjs-toploader": "^3.7.15",
+    "playwright": "^1.48.2",
+    "prop-types": "^15.8.1",
+    "react": "latest",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "latest",
+    "react-icons": "^5.3.0",
+    "sass": "^1.65.1",
+    "sharp": "^0.33.3",
+    "tailwindcss": "^3.3.3",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/bun": "^1.0.12",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "17.0.21",
+    "@types/node-fetch": "^2.6.12",
+    "@types/react": "^18.3.12",
+    "@types/react-transition-group": "^4.4.6",
+    "@types/sanitize-html": "^2.11.0",
+    "eslint": "8.11.0",
+    "eslint-config-next": "latest",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react-camel-case": "^1.1.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.0",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-css-order": "^2.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "prisma": "^6.2.1",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

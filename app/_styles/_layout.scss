@@ -1,0 +1,60 @@
+:root {
+  // LAYOUT
+  --outer-gutter: 20px;
+  --max-width: 1240px;
+  --header-height: 80px;
+
+  @screen xs {
+    --outer-gutter: 22px;
+  }
+
+  @screen sm {
+    --outer-gutter: 32px;
+  }
+
+  @screen md {
+    --outer-gutter: 40px;
+  }
+
+  @screen lg {
+    --outer-gutter: 64px;
+  }
+}
+
+.w-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--outer-gutter);
+  padding-left: var(--outer-gutter);
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.child-upper-center {
+  display: flex;
+  flex-direction: column;
+
+  &.upper--extra {
+    &::before {
+      flex-grow: 3;
+    }
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    width: 100%;
+    content: "";
+  }
+
+  &::before {
+    flex-grow: 4;
+  }
+
+  &::after {
+    flex-grow: 5;
+  }
+}
+.custom-max-width {
+  max-width: 65%;
+}

@@ -1,0 +1,16 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: theme("colors.black");
+}
+
+p {
+  color: inherit;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: rgb(var(--cl-foreground) / 0.05);
+}

@@ -1,0 +1,35 @@
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#cca505',
+      'lineColor': '#F8B229',
+    }
+  }
+}%%
+
+flowchart TD;
+   %% Trigger event
+   TRIGGER([The user hits the url of the site])-->S0;
+   style TRIGGER fill:#ccf
+ 
+   S0{"The system assesses whether the user has accessed the page before"};
+   S0--User has not visited site-->S1;
+   S0--User has already visited site-->S2;
+   S2--The user can sort by number of shares-->S6;
+   S2--The user can filter by date-->S5;
+   S2--The user can search by keyword-->S4;
+   S2--The user can sort by most recent publications-->S3;
+   S2--The user can sort by a range of topics-->S7;
+
+   S1["The system renders the landing screen for topical selection.<br /> "]-->S2;
+   S7["REQUIREMENT: The home page displays a list of topics that users can choose from.</br> Users can select from a list of topics and view related publications"/]-->SUCCESS;
+   S2{"The user lands on the homepage."};
+   S3["REQUIREMENT: The system displays the most recent publications when a topic is selected.</br>Publications are sorted by the most recent date by default."]-->SUCCESS;
+   S4["REQUIREMENT: Users can search for a keyword within the topic. </br>  Publications or articles that do not contain the keyword do not appear in the results."]-->SUCCESS;
+   S5["REQUIREMENT: Users can set a date range filter.</br> Only publications or articles within the selected date range are displayed."]-->SUCCESS;
+   S6["REQUIREMENT: Users can sort publications or articles by the number of shares.</br>The system displays the most shared publications or articles at the top when this sort option is selected."]-->SUCCESS;
+  
+   SUCCESS([User closes tab and finishes using site]);
+   style SUCCESS fill:#cfc
+ 

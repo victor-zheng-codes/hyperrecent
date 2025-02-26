@@ -1,0 +1,51 @@
+:root {
+  --cl-white: 255 255 255;
+  --cl-black: 17 17 17;
+
+  --cl-backdrop: var(--cl-white);
+  --cl-foreground: var(--cl-black);
+}
+
+html,
+body {
+  background-color: theme("colors.white");
+  color: theme("colors.black");
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  user-select: none;
+}
+
+* {
+  scroll-margin: 10vh;
+}
+
+.invisible-scrollbar {
+  -ms-overflow-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.loading-spinner {
+  display: inline-block;
+  animation: rotation 0.8s linear infinite;
+  border-top: 2px solid rgb(var(--cl-foreground));
+  border-right: 2px solid transparent;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

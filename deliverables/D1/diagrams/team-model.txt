@@ -1,0 +1,26 @@
+---
+config:
+  theme: mc
+---
+mindmap
+  root((hyper-dev))
+    Backend Team
+      Database
+      NodeJS
+        Express.js
+        API
+        Prisma
+    Infrastructure
+        docker
+        YAML
+        Virtual Machine
+    Product Team
+      Agile Methodology
+      Business Development
+        Use Cases
+        Requirements
+    Frontend Team
+      Next.js
+      JavaScript
+      HTML
+      CSS

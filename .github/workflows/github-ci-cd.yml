@@ -1,0 +1,83 @@
+name: github-ci-cd
+
+# any pull request conduct build/test
+on:
+  pull_request:
+    branches: [ "*" ]
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+        cache: 'npm'
+        
+    - run: npm i
+      
+    - run: npm run build --if-present
+
+  docker-compose-build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v2
+      - name: Build and run Docker Compose services
+        run: |
+          docker compose up -d --build
+        env:
+          COMPOSE_DOCKER_CLI_BUILD: 1
+          DOCKER_BUILDKIT: 1
+
+  deploy-dev:
+     needs: [build]
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
+       - name: Deploy the app
+         uses: digitalocean/app_action/deploy@v2
+         with:
+           token: ${{ secrets.DIGITAL_OCEAN_API_CRED }}
+           app_name: hyper-recent-dev
+  
+  test-dev:
+    needs: [deploy-dev]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+        cache: 'npm'
+        
+    - run: npm i
+    
+    - run: npx playwright install
+
+    - run: npx playwright test
+      env: 
+          frontend: https://uat.hyper-recent.online
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    needs: [test-dev, docker-compose-build-deploy]
+    runs-on: ubuntu-latest
+    steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
+       - name: Deploy the app
+         uses: digitalocean/app_action/deploy@v2
+         with:
+           token: ${{ secrets.DIGITAL_OCEAN_API_CRED }}
+           app_name: hyper-recent-main
+  
+    

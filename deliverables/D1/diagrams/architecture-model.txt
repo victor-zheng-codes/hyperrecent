@@ -1,0 +1,16 @@
+---
+config:
+  theme: forest
+---
+architecture-beta
+    group application(cloud)[Hyper Dev Application]
+    group frontend(cloud)[Frontend] in application
+    service nextjs(server)[NextJS] in frontend
+    group backend(cloud)[Backend] in application
+    service expressjs(server)[ExpressJS] in backend
+    service vm(disk)[Virtual Machine] in application
+    service postgresql(database)[PostgreSQL] in application
+    nextjs:R -- L:expressjs
+    expressjs:R -- L:postgresql
+    expressjs:T -- B:vm
+    postgresql:T -- B:vm
